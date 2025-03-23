@@ -1,8 +1,19 @@
 function App() {
   return (
-    <div>
+    <>
+      <nav>
 
-    </div>
+      </nav>
+      <header>
+
+      </header>
+      <main>
+
+      </main>
+      <footer>
+        
+      </footer>
+    </>
   );
 }
 
