@@ -3,8 +3,9 @@ import * as Yup from 'yup';
 import { useFormik } from "formik";
 import { useNavigate } from "react-router";
 import BookingForm from './BookingForm';
-import { fetchAPI, submitAPI } from '../../api';
+import { submitAPI } from '../../api';
 import useLocalStorage from '../../hooks/useLocalStorage';
+import availableTimesReducer from './reducer';
 
 const BookingPage = () => {
     const navigate = useNavigate();
@@ -24,31 +25,18 @@ const BookingPage = () => {
             guests: '',
             time: '',
             date: new Date(),
-            ocassion: null
+            ocassion: ''
         },
         onSubmit,
         validationSchema: Yup.object({
             guests: Yup.number().required("Guests number is required").min(1),
             time: Yup.string().required("Time is required"),
-            date: Yup.date().required("Required"),
+            date: Yup.date().required("Booking date is required"),
             ocassion: Yup.string().required("Ocassion is Required"),
         }),
     });
 
-    const [availableTimes, dispatch] = useReducer((availableTimes, action) => {
-        const actions = {
-            updateTimes: () => {
-                const { payload: date } = action;
-                if (!date) return availableTimes;
-                return fetchAPI(new Date(date));
-            },
-            initializeTimes: () => {
-                return fetchAPI(new Date());
-            }
-        }
-        return actions[action.type]();
-
-    }, []);
+    const [availableTimes, dispatch] = useReducer(availableTimesReducer, []);
 
     useEffect(() => {
         dispatch({ type: 'updateTimes', payload: values.date })

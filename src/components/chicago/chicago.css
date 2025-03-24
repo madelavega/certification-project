@@ -1,0 +1,71 @@
+.chicago {
+    background-color: var(--primary-green);
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    color: white;
+}
+
+@media (min-width: 439px) {
+    .chicago {
+        display: grid;
+        grid-template-columns: repeat(12, [col-start] 1fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "chicago-about-us chicago-image";
+        position: relative;
+    }
+}
+
+.chicago .about-us {
+    grid-area: chicago-about-us;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 439px) {
+    .chicago .about-us {
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "chicago-about-us"
+            "chicago-image";
+    }
+}
+
+@media (min-width: 439px) {
+    .chicago .about-us {
+        grid-column: col-start 3 / span 4;
+    }
+}
+
+.chicago img {
+    flex: 1;
+    grid-area: chicago-image;
+}
+
+@media (min-width: 439px) {
+    .chicago img {
+        grid-column: col-start 8;
+        position: absolute;
+        top: 1em;
+        border-radius: 15px;
+        height: 180px;
+    }
+}
+
+
+.chicago .goto-booking {
+    background-color: var(--primary-yellow);
+    color: black;
+}
+
+
+h1 {
+    color: var(--primary-yellow);
+    font-family: var(--title-font-family);
+}
+
+h2 {
+    color: white;
+    font-family: var(--title-font-family);
+}

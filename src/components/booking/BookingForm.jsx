@@ -26,6 +26,7 @@ const BookingForm = ({
                 <Input
                     id="res-date"
                     name="date"
+                    type="date"
                     value={values.date}
                     {...getFieldProps("date")}
                 />
@@ -64,7 +65,7 @@ const BookingForm = ({
                 </NativeSelect.Root>
             <Field.ErrorText>{errors.ocassion}</Field.ErrorText>
             </Field.Root>
-            <Button type="submit" disabled={Object.keys(errors).length || !Object.keys(touched).length} width="full" onClick={onFormSubmit}>
+            <Button type="submit" aria-label="On Click" disabled={Object.keys(errors).length || !Object.keys(touched).length} width="full" onClick={onFormSubmit}>
                 Make Your reservation
             </Button>
         </form>

@@ -1,0 +1,18 @@
+:root {
+    /* colors */
+    --bg-color: white;
+    --primary-green: #495E57;
+    --primary-yellow: #F4CE14;
+    --secondary-dark-salm: #EE9972;
+    --secondary-light-salm: #FBDABB;
+    --secondary-dark-grey: #333333;
+    --secondary-light-grey: #EDEFEE;
+
+    /* titles*/
+    --title-font-family: markazi;
+    --title-size: 64pt;
+    --subtitle-size: 40pt;
+
+    /* Commons */
+    --regular-font-family: karla;
+}
