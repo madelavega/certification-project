@@ -1,30 +1,39 @@
-import { useState, useReducer, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
+import * as Yup from 'yup';
+import { useFormik } from "formik";
 import { useNavigate } from "react-router";
 import BookingForm from './BookingForm';
 import { fetchAPI, submitAPI } from '../../api';
 import useLocalStorage from '../../hooks/useLocalStorage';
 
 const BookingPage = () => {
-    const [date, setDate] = useState(new Date());
-    const [guests, setGuests] = useState();
-    const [time, setTime] = useState();
-    const [ocassion, setOcassion] = useState('Birthday');
     const navigate = useNavigate();
     const [, setBookingData] = useLocalStorage('bookingData', {});
 
-    const submitForm = () => {
-        const formData = { date, guests, time, ocassion }
+    const onSubmit = (data) => {
         const submitCallback = submitAPI();
-        
+
         if (submitCallback) {
-            setBookingData(formData);
+            setBookingData(data);
             navigate('confirmation');
         }
     }
 
-    const onChange = (stateSetter) => ({ target: { value } }) => {
-        stateSetter(value);
-    }
+    const { getFieldProps, values, errors, touched, handleSubmit } = useFormik({
+        initialValues: {
+            guests: '',
+            time: '',
+            date: new Date(),
+            ocassion: null
+        },
+        onSubmit,
+        validationSchema: Yup.object({
+            guests: Yup.number().required("Guests number is required").min(1),
+            time: Yup.string().required("Time is required"),
+            date: Yup.date().required("Required"),
+            ocassion: Yup.string().required("Ocassion is Required"),
+        }),
+    });
 
     const [availableTimes, dispatch] = useReducer((availableTimes, action) => {
         const actions = {
@@ -42,8 +51,8 @@ const BookingPage = () => {
     }, []);
 
     useEffect(() => {
-        dispatch({ type: 'updateTimes', payload: date })
-    }, [date]);
+        dispatch({ type: 'updateTimes', payload: values.date })
+    }, [values.date]);
 
     useEffect(() => {
         dispatch({ type: 'initializeTimes' })
@@ -51,17 +60,12 @@ const BookingPage = () => {
 
 
     return <BookingForm
-        onChange={onChange}
-        date={date}
-        time={time}
-        guests={guests}
-        ocassion={ocassion}
-        setDate={setDate}
-        setGuests={setGuests}
-        setOcassion={setOcassion}
-        setTime={setTime}
         availableTimes={availableTimes}
-        onSubmit={submitForm}
+        onSubmit={handleSubmit}
+        getFieldProps={getFieldProps}
+        values={values}
+        errors={errors}
+        touched={touched}
     />
 }
 
