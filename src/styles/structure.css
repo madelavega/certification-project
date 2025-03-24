@@ -34,8 +34,15 @@
     grid-area: header;
     display: flex;
     padding-top: .5em;
+
     .logo {
         flex: 1;
+        margin-left: -1em
+    }
+
+    .kebab-ico {
+        padding-left: 1em;
+        padding-top: .5em;
     }
 }
 
@@ -43,8 +50,12 @@
     .header {
         grid-column: col-start 3 / span 2;
         display: inherit;
+
         .kebab-ico {
             display: none;
+        }
+        .logo {
+            margin-left: initial;
         }
     }
 }
@@ -56,6 +67,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 1em;
+
     &.displayed {
         display: flex;
     }
@@ -63,6 +75,7 @@
 
 .nav a {
     flex-grow: 1;
+    padding: 1em 0;
 }
 
 @media (min-width: 439px) {

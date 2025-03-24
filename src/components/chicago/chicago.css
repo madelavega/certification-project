@@ -16,6 +16,7 @@
 
 @media (min-width: 439px) {
     .chicago {
+        padding: 1em 0;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: auto auto;
 

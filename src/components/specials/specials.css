@@ -82,6 +82,7 @@
       }
 
       @media (min-width: 438px) {
+          padding: 1em 0;
           margin-top: 6em;
           grid-template-rows: auto auto;
           grid-template-columns: repeat(12, [col-start] 1fr);
