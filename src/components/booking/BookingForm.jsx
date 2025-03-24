@@ -15,7 +15,6 @@ const BookingForm = ({
 }) => {
     const onFormSubmit = (e) => {
         e.preventDefault();
-        debugger
         onSubmit(values);
     }
 

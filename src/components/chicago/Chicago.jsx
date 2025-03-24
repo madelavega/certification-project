@@ -11,7 +11,7 @@ const Chicago = () => {
             </p>
             <BookingButton />
         </section>
-        <img src={require('./bruchetta.svg').default} alt="Bruchetta image" title="Bruchetta" />
+        <div className="image"/>
     </div>
 
 }
