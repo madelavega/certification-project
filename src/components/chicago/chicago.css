@@ -1,18 +1,32 @@
 .chicago {
     background-color: var(--primary-green);
     flex: 1;
-    display: flex;
+    display: grid;
     color: white;
+    padding: 1em;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "chicago-about-us chicago-image";
+
+    h2 {
+        margin-top: -.5em;
+    }
 }
 
 @media (min-width: 439px) {
     .chicago {
-        display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
-        grid-template-rows: auto 1fr;
-        grid-template-areas:
-            "chicago-about-us chicago-image";
+        grid-template-rows: auto auto;
+
         position: relative;
+
+        .image {
+            grid-area: chicago-image;
+            background-size: cover;
+            width: 100%;
+            background-position-y: center;
+        }
     }
 }
 
@@ -22,14 +36,6 @@
     grid-template-columns: 1fr;
 }
 
-@media (min-width: 439px) {
-    .chicago .about-us {
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            "chicago-about-us"
-            "chicago-image";
-    }
-}
 
 @media (min-width: 439px) {
     .chicago .about-us {
@@ -38,38 +44,45 @@
 }
 
 .chicago .image {
-    grid-area: chicago-image;
-    background-image: url(./restauranfood.jpg);
     background-size: cover;
-    width: 100%;
+    flex: 1;
     background-position-y: center;
+    width: 100px;
+    height: 100px;
+    background-image: url(./restauranfood.jpg);
 }
 
 @media (min-width: 439px) {
-    .chicago .image {
-        grid-column: col-start 8;
-        position: absolute;
-        top: 1em;
-        border-radius: 15px;
-        background-position: center center;
-        width: 200px;
-        height: 200px;
+    .chicago {
+        .image {
+            grid-column: col-start 8;
+            position: absolute;
+            top: 1em;
+            border-radius: 15px;
+            background-position: center center;
+            width: 320px;
+            height: 320px;
+        }
+
+        h1 {
+            font-size: 64pt;
+        }
+
+        h2 {
+            font-size: 40pt;
+        }
+
     }
 }
-
-
-.chicago .goto-booking {
-    background-color: var(--primary-yellow);
-    color: black;
-}
-
 
 h1 {
     color: var(--primary-yellow);
     font-family: var(--title-font-family);
+    font-size: 4em;
 }
 
 h2 {
     color: white;
     font-family: var(--title-font-family);
+    font-size: 2.5em;
 }

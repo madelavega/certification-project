@@ -1,8 +1,22 @@
 a {
     text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--primary-green)
 }
 
 p {
     line-height: 1.5;
-     max-width: 65ch;
+    max-width: 65ch;
+    padding-bottom: 1em;
+}
+
+button {
+    background-color: var(--primary-yellow);
+    color: black;
+    border-radius: 1em;
+    padding: .5em 1em;
+    font-weight: bold;
 }

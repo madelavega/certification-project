@@ -6,6 +6,6 @@ const CallToAction = ()=> {
     const gotoBooking = () => {
         navigate('/booking');
     }
-    return <button className="goto-booking" onClick={gotoBooking}>Reserve a Table</button>
+    return <button onClick={gotoBooking}>Reserve a Table</button>
 }
 export default CallToAction;

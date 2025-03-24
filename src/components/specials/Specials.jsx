@@ -1,9 +1,12 @@
+import SpecialsList from './SpecialsList';
 import './specials.css';
 
 const Specials = () => {
-    return <div className="specials">
-        <div>specials</div>
-    </div>
+    return <section className="specials">
+        <h1>This weeks specials!</h1>
+        <button className="online-menu-btn">Online Menu</button>
+        <SpecialsList/>
+    </section>
 }
 
 export default Specials;

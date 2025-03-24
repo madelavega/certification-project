@@ -1,5 +1,5 @@
 import Chicago from '../chicago';
-import Specials from '../specials';
+import Specials from '../specials/Specials';
 import './homepage.css';
 
 const HomePage = () => {

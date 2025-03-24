@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter } from 'react-router';
 import { ChakraProvider, createSystem, defineConfig } from "@chakra-ui/react"
 import Nav from './components/nav';
@@ -15,11 +16,14 @@ const config = defineConfig({
 const system = createSystem(config)
 
 const App = () => {
+
+  const [toggleNav, setToggleNav] = useState(false);
+
   return (
     <ChakraProvider value={system}>
       <BrowserRouter>
-        <Header />
-        <Nav />
+        <Header setToggleNav={setToggleNav} />
+        <Nav displayed={toggleNav} />
         <Main />
       </BrowserRouter >
     </ChakraProvider>

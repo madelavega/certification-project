@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
-const Nav = () => {
-    return <nav className="nav">
+const Nav = ({displayed}) => {
+    return <nav className={`nav ${displayed ? 'displayed' : ''}`}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/menu">Menu</Link>
