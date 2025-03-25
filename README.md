@@ -1,7 +1,12 @@
 # Little Lemon project for the Front End Developer Capstone
+
 This is a project for the Meta Front End Developer Certification available in [coursera](https://www.coursera.org/professional-certificates/meta-front-end-developer?gad_source=1&gclid=Cj0KCQjwhYS_BhD2ARIsAJTMMQZt0gjIuu_Jy4ae_HHT7hPbHoODVvrJZQwHqJ_cM6L_T__6sdcQRtQaAmJ7EALw_wcB#enroll?utm_medium=sem&utm_source=gg&utm_campaign=b2c_emea_x_multi_ftcof_career-academy_cx_dr_bau_gg_pmax_gc_s1_en_m_hyb_23-12_x&campaignid=20858198824&adgroupid=&device=c&keyword=&matchtype=&network=x&devicemodel=&creativeid=&assetgroupid=6484888893&targetid=&extensionid=&placement=)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), but it is deprecated.
+
+Only the home page and the reservation sections have been implemented. They are also works in responsive mode.
+
+See the following scripts to run the application. Please, make sure to execute npm install before launch them.
 
 ## Available Scripts
 
