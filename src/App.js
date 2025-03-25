@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router';
-import { ChakraProvider, createSystem, defineConfig } from "@chakra-ui/react"
+import { ChakraProvider, createSystem, defaultConfig, defineConfig } from "@chakra-ui/react"
 import Nav from './components/nav';
 import Header from './components/header';
 import Main from './components/main';
@@ -13,7 +13,7 @@ const config = defineConfig({
   },
 })
 
-const system = createSystem(config)
+const system = createSystem(defaultConfig, config)
 
 const App = () => {
 

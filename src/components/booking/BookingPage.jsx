@@ -24,14 +24,14 @@ const BookingPage = () => {
         initialValues: {
             guests: '',
             time: '',
-            date: new Date(),
+            date: '',
             ocassion: ''
         },
         onSubmit,
         validationSchema: Yup.object({
             guests: Yup.number().required("Guests number is required").min(1),
             time: Yup.string().required("Time is required"),
-            date: Yup.date().required("Booking date is required"),
+            date: Yup.date().required("Booking date is required").min(new Date(), "Please, select a future date."),
             ocassion: Yup.string().required("Ocassion is Required"),
         }),
     });

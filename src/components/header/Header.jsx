@@ -3,7 +3,7 @@ import { ReactComponent as Kebab } from './kebab.svg';
 
 const Header = ({setToggleNav}) => {
     return <header className="header">
-        <Kebab className="kebab-ico" onClick={() => {
+        <Kebab className="kebab-ico" aria-label="show/close the menu"onClick={() => {
             setToggleNav(prev => !prev);
         }}/>
         <Logo className="logo"/>
