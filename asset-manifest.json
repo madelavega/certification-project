@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2b9241a.css",
-    "main.js": "/static/js/main.180dcc6c.js",
-    "static/js/453.3b78c386.chunk.js": "/static/js/453.3b78c386.chunk.js",
-    "static/media/restauranfood.jpg": "/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
-    "static/media/restaurant.jpg": "/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
-    "static/media/MarkaziText-VariableFont_wght.ttf": "/static/media/MarkaziText-VariableFont_wght.e632ba8943cfbba3a806.ttf",
-    "static/media/Logo.svg": "/static/media/Logo.f72c913c48c5334f78f2c336ec36f22b.svg",
-    "static/media/Karla-Regular.ttf": "/static/media/Karla-Regular.c97718a43c1b3c8d227a.ttf",
-    "index.html": "/index.html",
-    "static/media/kebab.svg": "/static/media/kebab.0da6f67ced800ab909f63d5144de37ee.svg",
-    "main.e2b9241a.css.map": "/static/css/main.e2b9241a.css.map",
-    "main.180dcc6c.js.map": "/static/js/main.180dcc6c.js.map",
-    "453.3b78c386.chunk.js.map": "/static/js/453.3b78c386.chunk.js.map"
+    "main.css": "/certification-project/static/css/main.525f6f0e.css",
+    "main.js": "/certification-project/static/js/main.5ca44be5.js",
+    "static/js/453.3b78c386.chunk.js": "/certification-project/static/js/453.3b78c386.chunk.js",
+    "static/media/restauranfood.jpg": "/certification-project/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/restaurant.jpg": "/certification-project/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/MarkaziText-VariableFont_wght.ttf": "/certification-project/static/media/MarkaziText-VariableFont_wght.e632ba8943cfbba3a806.ttf",
+    "static/media/Logo.svg": "/certification-project/static/media/Logo.f72c913c48c5334f78f2c336ec36f22b.svg",
+    "static/media/Karla-Regular.ttf": "/certification-project/static/media/Karla-Regular.c97718a43c1b3c8d227a.ttf",
+    "index.html": "/certification-project/index.html",
+    "static/media/kebab.svg": "/certification-project/static/media/kebab.0da6f67ced800ab909f63d5144de37ee.svg",
+    "main.525f6f0e.css.map": "/certification-project/static/css/main.525f6f0e.css.map",
+    "main.5ca44be5.js.map": "/certification-project/static/js/main.5ca44be5.js.map",
+    "453.3b78c386.chunk.js.map": "/certification-project/static/js/453.3b78c386.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2b9241a.css",
-    "static/js/main.180dcc6c.js"
+    "static/css/main.525f6f0e.css",
+    "static/js/main.5ca44be5.js"
   ]
 }
