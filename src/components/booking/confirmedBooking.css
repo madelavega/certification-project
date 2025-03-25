@@ -1,0 +1,7 @@
+.confirmed-reservation {
+    padding: 4em;
+    border-radius: 1em;
+    text-align: center;
+    background-color: var(--primary-green);
+    margin: 1em;
+}

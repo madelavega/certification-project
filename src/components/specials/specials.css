@@ -7,7 +7,7 @@
 
       h1 {
           grid-area: specials-title;
-          color: var(--secondary-dark-grey)
+          color: black;
       }
 
       .online-menu-btn {

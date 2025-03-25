@@ -1,27 +1,19 @@
-import {
-    Field,
-    Input,
-    NativeSelect
-} from "@chakra-ui/react";
+import LabelFieldGroup from "../common/form/LabelFieldGroup";
+import Select from "../common/form/Select";
 
 const BookingForm = ({
     availableTimes,
-    onSubmit,
     getFieldProps,
     values,
     errors,
     touched
 }) => {
-    const onFormSubmit = (e) => {
-        e.preventDefault();
-        onSubmit(values);
-    }
 
     return (
-        <form>
-            <Field.Root required invalid={!!errors.date && touched.date}>
-                <Field.Label htmlFor="res-date">Choose date</Field.Label>
-                <Input
+        <form className="booking-form">
+            <LabelFieldGroup required error={touched.date && errors.date}>
+                <label htmlFor="res-date">Choose date</label>
+                <input
                     id="res-date"
                     name="date"
                     type="date"
@@ -29,22 +21,18 @@ const BookingForm = ({
                     value={values.date}
                     {...getFieldProps("date")}
                 />
-            <Field.ErrorText>{errors.date}</Field.ErrorText>
-            </Field.Root>
-            <Field.Root required invalid={!!errors.time && touched.time}>
-                <Field.Label htmlFor="res-time">Choose time</Field.Label>
-                <NativeSelect.Root>
-                    <NativeSelect.Field  placeholder="Select the time" id="res-time" name="time" {...getFieldProps("time")} value={values.time} >
-                        {
-                            availableTimes.map(availableTime => <option key={availableTime} value={availableTime}>{availableTime}</option>)
-                        }
-                    </NativeSelect.Field>
-                </NativeSelect.Root>
-            <Field.ErrorText>{errors.time}</Field.ErrorText>
-            </Field.Root>
-            <Field.Root required invalid={errors.guests && touched.guests}>
-                <Field.Label htmlFor="guests">Number of guests</Field.Label>
-                <Input
+            </LabelFieldGroup>
+            <LabelFieldGroup required error={touched.time && errors.time}>
+                <label htmlFor="res-time">Choose time</label>
+                <Select id="res-time" name="time" {...getFieldProps("time")} value={values.time} >
+                    {
+                        [<option key="empty_time" disabled value=''>Select one of availables...</option>].concat(availableTimes.map(availableTime => <option key={availableTime} value={availableTime}>{availableTime}</option>))
+                    }
+                </Select>
+            </LabelFieldGroup>
+            <LabelFieldGroup required error={touched.guests && errors.guests}>
+                <label htmlFor="guests">Number of guests</label>
+                <input
                     id="guests"
                     type="number"
                     min="1"
@@ -52,21 +40,15 @@ const BookingForm = ({
                     value={values.guests}
                     {...getFieldProps("guests")}
                 />
-            <Field.ErrorText name="guests">{errors.guests}</Field.ErrorText>
-            </Field.Root>
-            <Field.Root required invalid={!!errors.ocassion && touched.ocassion}>
-                <Field.Label htmlFor="ocassion">Ocassion</Field.Label>
-                <NativeSelect.Root>
-                    <NativeSelect.Field placeholder="Select ocassion" id="ocassion" name="ocassion" {...getFieldProps("ocassion")} value={values.ocassion} >
-                        <option>Birthday</option>
-                        <option>Anniversary</option>
-                    </NativeSelect.Field>
-                </NativeSelect.Root>
-            <Field.ErrorText>{errors.ocassion}</Field.ErrorText>
-            </Field.Root>
-            <button type="submit" aria-label="On Click" disabled={Object.keys(errors).length || !Object.keys(touched).length} width="full" onClick={onFormSubmit}>
-                Make Your Reservation
-            </button>
+            </LabelFieldGroup>
+            <LabelFieldGroup required error={touched.ocassion && errors.ocassion}>
+                <label htmlFor="ocassion">Ocassion</label>
+                <Select id="ocassion" name="ocassion" {...getFieldProps("ocassion")} value={values.ocassion} >
+                    <option key="empty_ocassion" value='' disabled>Select the ocassion type</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                </Select>
+            </LabelFieldGroup>
         </form>
     )
 }

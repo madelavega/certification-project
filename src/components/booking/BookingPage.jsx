@@ -6,6 +6,7 @@ import BookingForm from './BookingForm';
 import { submitAPI } from '../../api';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import availableTimesReducer from './reducer';
+import "./booking.css";
 
 const BookingPage = () => {
     const navigate = useNavigate();
@@ -18,6 +19,11 @@ const BookingPage = () => {
             setBookingData(data);
             navigate('confirmation');
         }
+    }
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+        handleSubmit(values);
     }
 
     const { getFieldProps, values, errors, touched, handleSubmit } = useFormik({
@@ -47,14 +53,29 @@ const BookingPage = () => {
     }, []);
 
 
-    return <BookingForm
-        availableTimes={availableTimes}
-        onSubmit={handleSubmit}
-        getFieldProps={getFieldProps}
-        values={values}
-        errors={errors}
-        touched={touched}
-    />
+    return (
+        <section className="booking">
+            <div className="booking-header">
+                <h1>Reservation</h1>
+                <p>Please, fill out the following form regarding your reservation.</p>
+
+            </div>
+            <div className="form-container">
+                <BookingForm
+                    availableTimes={availableTimes}
+                    getFieldProps={getFieldProps}
+                    values={values}
+                    errors={errors}
+                    touched={touched}
+                />
+                <div className="image"/>
+            </div>
+
+            <button className="form-submit" type="submit" aria-label="On Click" disabled={Object.keys(errors).length || !Object.keys(touched).length} width="full" onClick={onFormSubmit}>
+                Make Your Reservation
+            </button>
+        </section>
+    )
 }
 
 export default BookingPage;

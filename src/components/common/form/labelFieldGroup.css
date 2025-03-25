@@ -1,0 +1,45 @@
+
+.label-field-group {
+    --label-align-top-marging: 1em 0 0 0;
+    --label-align-left-marging: 0 1em 0 0;
+
+    margin: 1em 1em 0 1em;
+    
+    &.label-align-top {
+        input,
+        select {
+            display: block;
+            margin: var(--label-align-top-marging)
+        }
+    }
+
+    &.label-align-left {
+        select, input {
+            margin: var(--label-align-left-marging);
+        }
+    }
+
+    &.invalid {
+        .error {
+            display: inline-block;
+            color: red;
+        }
+
+        input,
+        select {
+            outline: 1px solid red;
+        }
+    }
+
+    .error {
+        height: 1em;
+        margin-top: .5em;
+        display: none;
+    }
+    &.required {
+        label::after {
+            content: ' *';
+            color: red;
+        }
+    }
+}
