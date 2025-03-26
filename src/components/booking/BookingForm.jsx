@@ -25,8 +25,9 @@ const BookingForm = ({
             <LabelFieldGroup required error={touched.time && errors.time}>
                 <label htmlFor="res-time">Choose time</label>
                 <Select id="res-time" name="time" {...getFieldProps("time")} value={values.time} >
+                    <option disabled value=''>Select one of availables...</option>
                     {
-                        [<option key="empty_time" disabled value=''>Select one of availables...</option>].concat(availableTimes.map(availableTime => <option key={availableTime} value={availableTime}>{availableTime}</option>))
+                        availableTimes.map(availableTime => <option key={availableTime} value={availableTime}>{availableTime}</option>)
                     }
                 </Select>
             </LabelFieldGroup>
