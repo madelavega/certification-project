@@ -61,7 +61,6 @@ describe('BookingForm', () => {
         expect(screen.queryByText(propsWithErrors.errors.ocassion)).toBeInTheDocument();
     });
     it('Displays the available times', () => {
-
         render(<BookingForm {...defaultProps} />);
         const timeSelector = screen.queryByLabelText(/Choose time/);
         timeSelector.click();
