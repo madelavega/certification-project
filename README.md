@@ -8,6 +8,8 @@ Only the home page and the reservation sections have been implemented. They are 
 
 See the following scripts to run the application. Please, make sure to execute npm install before launch them.
 
+If you prefer, you can check the application online in [this link](https://madelavega.github.io/certification-project)
+
 You can check the responsive design in the Chrome dev tools.
 
 ## Available Scripts

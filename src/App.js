@@ -9,7 +9,7 @@ const App = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Header setToggleNav={setToggleNav} />
         <Nav displayed={toggleNav} />
         <Main />
